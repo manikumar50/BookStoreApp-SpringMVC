@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav {
+            display: flex;
+            justify-content:center;
+            align-self: self-end;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .book-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section with Logo -->
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/150x50?text=Book+Store+Logo" alt="Book Store Logo">
+        </div>
+        <h1>Welcome to the Book Store</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/getAllBooks">Available Books</a>
+        <a href="/add">Add New Book</a>
+    </nav>
+
+    <!-- Book Cards Section -->
+    <div class="container">
+        <h2>Featured Books</h2>
+        <div class="book-section">
+            <div class="book-card">
+                <img src="https://via.placeholder.com/150x200?text=Book+1" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Author 1</p>
+            </div>
+            <div class="book-card">
+                <img src="https://via.placeholder.com/150x200?text=Book+2" alt="Book 2">
+                <h3>Book Title 2</h3>
+                <p>Author 2</p>
+            </div>
+            <div class="book-card">
+                <img src="https://via.placeholder.com/150x200?text=Book+3" alt="Book 3">
+                <h3>Book Title 3</h3>
+                <p>Author 3</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Book Store App. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

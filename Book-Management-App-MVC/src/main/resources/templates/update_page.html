@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            width: 40%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px 0;
+            font-size: 1.1em;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            width: 48%;
+            padding: 10px;
+            font-size: 1em;
+            margin: 10px 1%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Update Book Details</h1>
+
+    <form action="" th:action="@{'/update/' + ${Book.id}}" th:object="${Book}" method="post">
+        <label for="bookName">Book Name:</label>
+        <input type="text" th:field="*{bookName}" placeholder="Enter Book Name">
+
+        <label for="authorName">Author Name:</label>
+        <input type="text" th:field="*{authorName}" placeholder="Enter Author Name">
+
+        <label for="publishYear">Publish Year:</label>
+        <input type="text" th:field="*{publishYear}" placeholder="Enter Publish Year">
+
+        <label for="availableStock">Current Stock:</label>
+        <input type="text" th:field="*{availableStock}" placeholder="Enter Available Stock">
+
+        <label for="price">Price (Rs):</label>
+        <input type="text" th:field="*{price}" placeholder="Enter Price in Rs">
+
+        <div class="container">
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

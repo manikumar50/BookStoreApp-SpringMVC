@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 2px solid #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        a:hover {
+            color: #333;
+        }
+
+        .back-home {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Available Books</h1>
+
+    <table>
+        <tr>
+            <th>Book Id</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Publish Year</th>
+            <th>Price</th>
+            <th>Available Stocks</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <tr th:each="book : ${Books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.bookName}"></td>
+            <td th:text="${book.authorName}"></td>
+            <td th:text="${book.publishYear}"></td>
+            <td th:text="${book.price}"></td>
+            <td th:text="${book.availableStock}"></td>
+            <td><a th:href="@{'/edit-details/' + ${book.id}}">Edit</a></td>
+            <td><a th:href="@{'/drop-details/' + ${book.id}}">Drop</a></td>
+        </tr>
+    </table>
+
+    <a href="" th:href="@{/}" class="back-home">Back Home</a>
+
+</body>
+
+</html>
